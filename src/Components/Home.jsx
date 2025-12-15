@@ -15,10 +15,10 @@ const Home = () => {
             </div>
             <div className="projects-grid">
               <div className="project-card">
-                <h3 className="project-card-title">Project Alpha</h3>
+                <h3 className="project-card-title">OTP-App</h3>
                 <p className="project-card-description">
-                  Initial phase development with core features and
-                  infrastructure setup.
+                  OTP-App is a simple application that generates a random OTP
+                  and displays it on the screen.
                 </p>
               </div>
             </div>
