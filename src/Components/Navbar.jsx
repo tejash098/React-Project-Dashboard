@@ -27,6 +27,15 @@ export default function Navbar() {
           >
             OTP-App
           </NavLink>
+          <NavLink
+            to="/todo"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            TODO-App
+          </NavLink>
         </div>
       </nav>
     </>
