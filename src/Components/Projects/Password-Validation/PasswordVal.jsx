@@ -7,26 +7,28 @@ const PasswordVal = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [strength, setStrength] = useState("");
+  const [confirmStrength, setConfirmStrength] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const getStrength = (value) => {
+    if (value.length === 0) return "";
+    if (value.length < 4) return "Weak";
+    if (value.length < 7) return "Medium";
+    return "Strong";
+  };
 
   const handlePasswordChange = (e) => {
     const value = e.target.value;
     setPassword(value);
-
-    if (value.length === 0) {
-      setStrength("");
-    } else if (value.length < 4) {
-      setStrength("Weak");
-    } else if (value.length < 7) {
-      setStrength("Medium");
-    } else {
-      setStrength("Strong");
-    }
+    setStrength(getStrength(value));
   };
 
   const handleConfirmChange = (e) => {
-    setConfirmPassword(e.target.value);
+    const value = e.target.value;
+    setConfirmPassword(value);
+    setConfirmStrength(getStrength(value));
     setIsSubmitted(false);
   };
 
@@ -64,16 +66,22 @@ const PasswordVal = () => {
 
         <div className="field">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={handleConfirmChange}
             className={confirmClass}
           />
-          <span onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+          <span onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+            {showConfirmPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
           </span>
         </div>
+
+        {confirmStrength && (
+          <p className={`strength ${confirmStrength}`}>
+            {confirmStrength}
+          </p>
+        )}
 
         {isSubmitted && confirmPassword && (
           <p className={passwordsMatch ? "match" : "mismatch"}>
@@ -81,7 +89,9 @@ const PasswordVal = () => {
           </p>
         )}
 
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={confirmPassword.length < 4 || password.length < 4}>
+          Submit
+        </button>
       </form>
     </div>
   );
