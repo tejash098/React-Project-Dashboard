@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import OTPApp from "./Projects/OTP-generate/OTPApp";
 import TodoApp from "./Projects/TODO-APP/TodoApp";
+import PasswordVal from "./Projects/Password-Validation/PasswordVal";
 function ProjectApp() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function ProjectApp() {
           <Route path="/" element={<Home />} />
           <Route path="/otp" element={<OTPApp />} />
           <Route path="/todo" element={<TodoApp/>}/>
+          <Route path="/password" element={<PasswordVal/>}/>
         </Routes>
       </div>
     </BrowserRouter>

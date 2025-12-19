@@ -4,13 +4,15 @@ import "./TodoApp.css";
 const TodoApp = () => {
   const [list, setList] = useState([]);
   const [value, setValue] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   const hdlSubmit = (e) => {
     e.preventDefault();
     if (!value.trim()) return;
 
-    setList([...list, { text: value, status: false }]);
+    setList([...list, { text: value, status: false, dueDate: dueDate }]);
     setValue("");
+    setDueDate("");
   };
 
   const hdlCheck = (idx) => {
@@ -36,6 +38,8 @@ const TodoApp = () => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
+        <label htmlFor="duedate">Due Date:</label>
+        <input type="date" id="duedate" value={dueDate} onChange={(e) => setDueDate(e.target.value)}/>
         <button type="submit">Add</button>
       </form>
 
@@ -51,6 +55,7 @@ const TodoApp = () => {
             <span className={item.status ? "completed" : ""}>{item.text}</span>
             <span>{item.status ? "Completed" : "Pending"}</span>
             <span>Created on: {new Date().toLocaleDateString()}</span>
+            <span>Due Date: {item.dueDate}</span>
             <button onClick={() => hdlDelete(idx)}>Remove</button>
           </li>
         ))}

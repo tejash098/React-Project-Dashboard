@@ -36,6 +36,15 @@ export default function Navbar() {
           >
             TODO-App
           </NavLink>
+          <NavLink
+            to="/password"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Password-Validation
+          </NavLink>
         </div>
       </nav>
     </>

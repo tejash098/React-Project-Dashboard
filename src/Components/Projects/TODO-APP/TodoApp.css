@@ -20,7 +20,7 @@
       color: #cfcfcf;
     }
 
-    input {
+    input[type="text"], input[type="date"] {
       padding: 10px;
       border-radius: 8px;
       font-size: 18px;
@@ -38,6 +38,9 @@
       &::placeholder {
         color: #777;
       }
+    }
+    input[type="date"] {
+      width: 12vw;
     }
 
     button {
