@@ -42,6 +42,12 @@
     input[type="date"] {
       width: 12vw;
     }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      -webkit-appearance: button;
+      background-color: #4a90e2;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
     button {
       padding: 10px 16px;
