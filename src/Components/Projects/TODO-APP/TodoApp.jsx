@@ -27,7 +27,8 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="todoapp">
+    <div className="content-inner">
+      <div className="todoapp">
       <h1>Manage your daily todo list.</h1>
 
       <form onSubmit={hdlSubmit}>
@@ -60,6 +61,7 @@ const TodoApp = () => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };

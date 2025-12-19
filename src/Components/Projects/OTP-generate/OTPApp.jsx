@@ -1,41 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import './OTPApp.css'
+import React, { useEffect, useState } from "react";
+import "./OTPApp.css";
 
 const OTPApp = () => {
-  const [generatedOtp, setGeneratedOtp] = useState(null)
-  const [userOtp, setUserOtp] = useState('')
-  const [status, setStatus] = useState('')
+  const [generatedOtp, setGeneratedOtp] = useState(null);
+  const [userOtp, setUserOtp] = useState("");
+  const [status, setStatus] = useState("");
 
   const generateOTP = () => {
-    const otp = String(Math.floor(Math.random() * 1000000)).padStart(6, '0')
-    setGeneratedOtp(otp)
-    setUserOtp('')
-    setStatus('')
-  }
+    const otp = String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
+    setGeneratedOtp(otp);
+    setUserOtp("");
+    setStatus("");
+  };
 
   const verifyOTP = () => {
     if (!generatedOtp) {
-      setStatus('expired')
-      return
+      setStatus("expired");
+      return;
     }
 
     if (userOtp === generatedOtp) {
-      setStatus('matched')
+      setStatus("matched");
     } else {
-      setStatus('not-matched')
+      setStatus("not-matched");
     }
-  }
+  };
 
   useEffect(() => {
-    if (!generatedOtp) return
+    if (!generatedOtp) return;
 
     const timer = setTimeout(() => {
-      setGeneratedOtp(null)
-      setStatus('expired')
-    }, 10000)
+      setGeneratedOtp(null);
+      setStatus("expired");
+    }, 10000);
 
-    return () => clearTimeout(timer)
-  }, [generatedOtp])
+    return () => clearTimeout(timer);
+  }, [generatedOtp]);
 
   return (
     <div className="otp-app">
@@ -55,11 +55,13 @@ const OTPApp = () => {
 
       <button onClick={verifyOTP}>Verify OTP</button>
 
-      {status === 'matched' && <h3 style={{ color: 'green' }}>OTP Matched</h3>}
-      {status === 'not-matched' && <h3 style={{ color: 'red' }}>OTP Not Matched</h3>}
-      {status === 'expired' && <h3 style={{ color: 'gray' }}>OTP Expired</h3>}
+      {status === "matched" && <h3 style={{ color: "green" }}>OTP Matched</h3>}
+      {status === "not-matched" && (
+        <h3 style={{ color: "red" }}>OTP Not Matched</h3>
+      )}
+      {status === "expired" && <h3 style={{ color: "gray" }}>OTP Expired</h3>}
     </div>
-  )
-}
+  );
+};
 
-export default OTPApp
+export default OTPApp;

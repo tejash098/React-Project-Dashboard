@@ -1,41 +1,43 @@
 .otp-app {
+  max-width: 420px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  background-color: #212121;
-  color: #fff;
+  gap: 20px;
 }
 
 .otp-app h1 {
-  margin-bottom: 20px;
-}
-.otp-app button {
-  padding: 10px 16px;
-  background-color: #4a90e2;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+  font-size: 26px;
   font-weight: 600;
+  text-align: center;
 }
 
-.otp-app button:hover {
-  background-color: #3a80c5;
+.otp-display {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 6px;
+  background: #222;
+  border: 1px dashed #3a3a3a;
+  letter-spacing: 4px;
 }
 
 .otp-app input {
-  padding: 10px;
-  border: 1px solid #919191;
-  border-radius: 5px;
-  font-size: 16px;
-  margin: 4vh;
-  width: 20%;
-  background-color: #212121;
-  color: #fff;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.otp-app input::placeholder {
+  color: #777;
+  letter-spacing: normal;
 }
 
 .otp-app input:focus {
@@ -43,14 +45,35 @@
   border-color: #4a90e2;
 }
 
-.otp-app input::placeholder {
-  color: #777;
+.otp-app button {
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #4a90e2;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.otp-app h2 {
-  margin-top: 20px;
+.otp-app button:hover {
+  background: #3a80c5;
 }
 
-.otp-app h3 {
-  margin-top: 10px;
+.otp-status {
+  text-align: center;
+  font-weight: 500;
+}
+
+.otp-status.success {
+  color: #4caf50;
+}
+
+.otp-status.error {
+  color: #f44336;
+}
+
+.otp-status.expired {
+  color: #9e9e9e;
 }
