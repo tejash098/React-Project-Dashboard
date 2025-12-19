@@ -27,8 +27,7 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="content-inner">
-      <div className="todoapp">
+    <div className="todoapp">
       <h1>Manage your daily todo list.</h1>
 
       <form onSubmit={hdlSubmit}>
@@ -40,7 +39,12 @@ const TodoApp = () => {
           onChange={(e) => setValue(e.target.value)}
         />
         <label htmlFor="duedate">Due Date:</label>
-        <input type="date" id="duedate" value={dueDate} onChange={(e) => setDueDate(e.target.value)}/>
+        <input
+          type="date"
+          id="duedate"
+          value={dueDate}
+          onChange={(e) => setDueDate(e.target.value)}
+        />
         <button type="submit">Add</button>
       </form>
 
@@ -61,7 +65,6 @@ const TodoApp = () => {
           </li>
         ))}
       </ul>
-    </div>
     </div>
   );
 };

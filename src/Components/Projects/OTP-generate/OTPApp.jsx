@@ -32,7 +32,8 @@ const OTPApp = () => {
     const timer = setTimeout(() => {
       setGeneratedOtp(null);
       setStatus("expired");
-    }, 10000);
+      setUserOtp("");
+    }, 12000);
 
     return () => clearTimeout(timer);
   }, [generatedOtp]);
