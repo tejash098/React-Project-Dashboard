@@ -1,46 +1,46 @@
-import React, { useState } from 'react'
-import './PasswordVal.css'
-import VisibilityIcon from '@mui/icons-material/Visibility'
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
+import React, { useState } from "react";
+import "./PasswordVal.css";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 const PasswordVal = () => {
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [strength, setStrength] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [strength, setStrength] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handlePasswordChange = (e) => {
-    const value = e.target.value
-    setPassword(value)
+    const value = e.target.value;
+    setPassword(value);
 
     if (value.length === 0) {
-      setStrength('')
+      setStrength("");
     } else if (value.length < 4) {
-      setStrength('Weak')
+      setStrength("Weak");
     } else if (value.length < 7) {
-      setStrength('Medium')
+      setStrength("Medium");
     } else {
-      setStrength('Strong')
+      setStrength("Strong");
     }
-  }
+  };
 
   const handleConfirmChange = (e) => {
-    setConfirmPassword(e.target.value)
-    setIsSubmitted(false)
-  }
+    setConfirmPassword(e.target.value);
+    setIsSubmitted(false);
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsSubmitted(true)
-  }
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
 
   const passwordsMatch =
-    password === confirmPassword && confirmPassword.length > 0
+    password === confirmPassword && confirmPassword.length > 0;
 
-  let confirmClass = ''
+  let confirmClass = "";
   if (isSubmitted && confirmPassword.length > 0) {
-    confirmClass = passwordsMatch ? 'success' : 'error'
+    confirmClass = passwordsMatch ? "success" : "error";
   }
 
   return (
@@ -50,7 +50,7 @@ const PasswordVal = () => {
       <form onSubmit={handleSubmit}>
         <div className="field">
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             placeholder="Enter Password"
             value={password}
             onChange={handlePasswordChange}
@@ -60,13 +60,11 @@ const PasswordVal = () => {
           </span>
         </div>
 
-        {strength && (
-          <p className={`strength ${strength}`}>{strength}</p>
-        )}
+        {strength && <p className={`strength ${strength}`}>{strength}</p>}
 
         <div className="field">
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={handleConfirmChange}
@@ -78,15 +76,15 @@ const PasswordVal = () => {
         </div>
 
         {isSubmitted && confirmPassword && (
-          <p className={passwordsMatch ? 'match' : 'mismatch'}>
-            {passwordsMatch ? 'Password Match' : 'Mismatch'}
+          <p className={passwordsMatch ? "match" : "mismatch"}>
+            {passwordsMatch ? "Password Match" : "Mismatch"}
           </p>
         )}
 
         <button type="submit">Submit</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default PasswordVal
+export default PasswordVal;
