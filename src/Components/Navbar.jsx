@@ -45,6 +45,15 @@ export default function Navbar() {
           >
             Password-Validation
           </NavLink>
+          <NavLink
+            to="/captcha"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Captcha-Validation
+          </NavLink>
         </div>
       </nav>
     </>
