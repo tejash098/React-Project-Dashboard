@@ -8,6 +8,9 @@ import PasswordVal from "./Projects/Password-Validation/PasswordVal";
 import CaptchValid from "./Projects/Captcha-Valid/CaptchValid";
 import CurrencyConverter from "./Projects/CurrencyConverter/CurrencyConverter";
 import PasswordGenerate from "./Projects/Password-Generate/PasswordGenerate";
+import About from "./Portfolio/About";
+import Contact from "./Portfolio/Contact";
+import Landing from "./Portfolio/Landing";
 
 function ProjectApp() {
   return (
@@ -22,6 +25,9 @@ function ProjectApp() {
           <Route path="/captcha" element={<CaptchValid/>}/>
           <Route path="/currency" element={<CurrencyConverter/>}/>
           <Route path="/passwordGenerate" element={<PasswordGenerate/>}/>
+          <Route path="/Portfolio" element={<Landing/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </div>
     </BrowserRouter>

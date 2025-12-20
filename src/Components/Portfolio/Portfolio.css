@@ -1,0 +1,95 @@
+.landingPortfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.landingPortfolio .img-section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.landingPortfolio .img-section img {
+  width: 55%;
+  height: 55%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.landingPortfolio .content-section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.landingPortfolio .content-section p {
+  font-size: 1.5rem;
+}
+
+.landingPortfolio .content-section h1 {
+  font-size: 2.5rem;
+}
+
+.landingPortfolio .content-section a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #4a90e2;
+  padding: 2vh 1vw;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #3587e6;
+    transform: scale(1.04);
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.landingPortfolio .content-section .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.landingPortfolio .content-section .icon:hover {
+  transform: scale(1.08);
+}
+
+.landingPortfolio .content-section .icon:active {
+  transform: scale(0.95);
+}
+
+.landingPortfolio .social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1vh;
+}
+
+.landingPortfolio .social-icons .icon {
+  text-decoration: none;
+  background: none;
+  color: #4a90e2;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.08);
+    background: none;
+  }
+  &:active {
+    transform: scale(0.95);
+    background: none;
+  }
+}

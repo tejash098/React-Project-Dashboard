@@ -10,13 +10,40 @@ export default function Navbar() {
         </div>
         <div className="sidebar-links">
           <NavLink
+            to="/Portfolio"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Portfolio
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Contact
+          </NavLink>
+          <NavLink
             to="/"
             className={({ isActive }) =>
               isActive ? "sidebar-link active" : "sidebar-link"
             }
             end
           >
-            Overview
+            Projects
           </NavLink>
           <NavLink
             to="/otp"
