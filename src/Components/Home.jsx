@@ -42,6 +42,12 @@ const Home = () => {
                   remove, and update tasks.
                 </p>
               </div>
+              <div className="project-card">
+                <h3 className="project-card-title">Currency-Converter</h3>
+                <p className="project-card-description">
+                  Currency-Converter is a simple application that allows you to convert currencies.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -54,6 +54,15 @@ export default function Navbar() {
           >
             Captcha-Validation
           </NavLink>
+          <NavLink
+            to="/currency"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Currency-Converter
+          </NavLink>
         </div>
       </nav>
     </>
