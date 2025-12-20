@@ -63,6 +63,15 @@ export default function Navbar() {
           >
             Currency-Converter
           </NavLink>
+          <NavLink
+            to={"/passwordGenerate"}
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Password-Generator
+          </NavLink>
         </div>
       </nav>
     </>

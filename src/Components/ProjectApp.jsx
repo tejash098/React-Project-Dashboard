@@ -7,6 +7,7 @@ import TodoApp from "./Projects/TODO-APP/TodoApp";
 import PasswordVal from "./Projects/Password-Validation/PasswordVal";
 import CaptchValid from "./Projects/Captcha-Valid/CaptchValid";
 import CurrencyConverter from "./Projects/CurrencyConverter/CurrencyConverter";
+import PasswordGenerate from "./Projects/Password-Generate/PasswordGenerate";
 
 function ProjectApp() {
   return (
@@ -20,6 +21,7 @@ function ProjectApp() {
           <Route path="/password" element={<PasswordVal/>}/>
           <Route path="/captcha" element={<CaptchValid/>}/>
           <Route path="/currency" element={<CurrencyConverter/>}/>
+          <Route path="/passwordGenerate" element={<PasswordGenerate/>}/>
         </Routes>
       </div>
     </BrowserRouter>

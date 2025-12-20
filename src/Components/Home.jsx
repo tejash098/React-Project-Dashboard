@@ -39,13 +39,19 @@ const Home = () => {
                 <h3 className="project-card-title">TODO-App</h3>
                 <p className="project-card-description">
                   TODO-App is a simple application that allows you to add,
-                  remove, and update tasks.
+                  remove, and update tasks along with the due date.
                 </p>
               </div>
               <div className="project-card">
                 <h3 className="project-card-title">Currency-Converter</h3>
                 <p className="project-card-description">
-                  Currency-Converter is a simple application that allows you to convert currencies.
+                  Currency-Converter is a simple application that allows you to convert currencies with real-time exchange rates.
+                </p>
+              </div>
+              <div className="project-card">
+                <h3 className="project-card-title">Password-Generate</h3>
+                <p className="project-card-description">
+                  Password-Generate is a simple application that allows you to generate a random password with different options like length, include numbers, include special characters and copy to clipboard.
                 </p>
               </div>
             </div>
