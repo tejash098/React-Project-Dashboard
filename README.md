@@ -1,19 +1,40 @@
 # Projects Dashboard
 
-A centralized dashboard for managing and monitoring projects. This application provides a clean and responsive interface to oversee multiple projects from a single location.
+A centralized dashboard for managing and monitoring a collection of mini-applications and portfolio sections. This application provides a clean and responsive interface to access various tools and informational pages.
 
 ## Features
 
-- **Project Overview**: specific project details and descriptions.
-- **Sidebar Navigation**: Easy access to different sections of the dashboard.
-- **Responsive Layout**: Optimized for various screen sizes using modern CSS.
+The dashboard includes the following applications and sections:
+
+### Mini-Applications
+
+- **OTP-App**: Generates random OTPs and displays them.
+- **CAPTCHA-Valid**: Generates random CAPTCHAs for user validation.
+- **Password-Validator**: Validates password strength and criteria.
+- **TODO-App**: A task management tool to add, remove, and update tasks with due dates.
+- **Currency-Converter**: Real-time currency conversion tool.
+- **Password-Generate**: Generates random secure passwords with customizable options (length, numbers, special characters) and copy-to-clipboard functionality.
+- **Book-Library**: Search for books by author or name, read them, or download as PDF.
+
+### Portfolio Sections
+
+- **Landing Page**: Welcome page of the portfolio.
+- **About**: Information about the developer or organization.
+- **Contact**: Contact information and form.
+
+### General Features
+
+- **Sidebar Navigation**: Easy access to all projects and sections.
+- **Responsive Layout**: Optimized for various screen sizes.
 
 ## Technologies Used
 
-- **React**: For building the user interface.
-- **Vite**: For fast development and building.
-- **React Router**: For navigation between views.
-- **CSS**: For styling and layout.
+- **React**: UI Library.
+- **Vite**: Build tool and development server.
+- **React Router**: For client-side routing.
+- **CSS**: Styling (including custom properties and responsive design).
+- **Axios**: For making HTTP requests (used in some mini-apps).
+- **MUI (Material UI)**: UI components (icons, etc.).
 
 ## Setup Instructions
 

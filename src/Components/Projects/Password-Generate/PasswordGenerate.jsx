@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import PasswordIcon from '@mui/icons-material/Password';
 import "./PasswordGenerate.css";
 
 const PasswordGenerate = () => {
@@ -36,7 +37,7 @@ const PasswordGenerate = () => {
   return (
     <>
       <div className="passwordGenerate">
-        <h1>Password Generator</h1>
+        <h1><PasswordIcon fontSize="large"/> Password Generator</h1>
 
         <div className="password-card">
           <div className="password-row">

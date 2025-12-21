@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ListAltIcon from '@mui/icons-material/ListAlt';
 import "./TodoApp.css";
 
 const TodoApp = () => {
@@ -28,7 +29,7 @@ const TodoApp = () => {
 
   return (
     <div className="todoapp">
-      <h1>Manage your daily todo list.</h1>
+      <h1><ListAltIcon fontSize="large"/> Manage your daily todo list.</h1>
 
       <form onSubmit={hdlSubmit}>
         <label htmlFor="todo">Add Todo:</label>

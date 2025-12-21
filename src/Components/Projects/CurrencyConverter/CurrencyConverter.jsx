@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CurrencyConverter.css";
 import SwapHorizontalCircleIcon from "@mui/icons-material/SwapHorizontalCircle";
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 
 const CurrencyConverter = () => {
   const [amount, setAmount] = useState('');
@@ -11,11 +12,15 @@ const CurrencyConverter = () => {
 
   useEffect(() => {
     async function fetchRates() {
-      const response = await fetch(
-        "https://v6.exchangerate-api.com/v6/17e0f6d8e948c7449314358c/latest/USD"
-      );
-      const data = await response.json();
-      setRates(Object.entries(data.conversion_rates));
+      try {
+        const response = await fetch(
+          "https://v6.exchangerate-api.com/v6/17e0f6d8e948c7449314358c/latest/USD"
+        );
+        const data = await response.json();
+        setRates(Object.entries(data.conversion_rates));
+      } catch (error) {
+        console.error("Error fetching rates:", error);
+      }
     }
     fetchRates();
   }, []);
@@ -38,7 +43,7 @@ const CurrencyConverter = () => {
 
   return (
     <div className="currencyconvert">
-      <h1>Currency Converter</h1>
+      <h1><CurrencyExchangeIcon fontSize="large"/> Currency Converter</h1>
 
       <div className="converter-card">
         <div className="field">
