@@ -11,6 +11,7 @@ import PasswordGenerate from "./Projects/Password-Generate/PasswordGenerate";
 import About from "./Portfolio/About";
 import Contact from "./Portfolio/Contact";
 import Landing from "./Portfolio/Landing";
+import BookLibrary from "./Projects/Book-Library/BookLibrary";
 
 function ProjectApp() {
   return (
@@ -28,6 +29,7 @@ function ProjectApp() {
           <Route path="/Portfolio" element={<Landing/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/bookLibrary" element={<BookLibrary/>}/>
         </Routes>
       </div>
     </BrowserRouter>

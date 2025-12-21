@@ -54,6 +54,12 @@ const Home = () => {
                   Password-Generate is a simple application that allows you to generate a random password with different options like length, include numbers, include special characters and copy to clipboard.
                 </p>
               </div>
+              <div className="project-card">
+                <h3 className="project-card-title">Book-Library</h3>
+                <p className="project-card-description">
+                  Book-Library is a simple application that allows search by author or name and reading books or downloading books in pdf format.
+                </p>
+              </div>
             </div>
           </div>
         </div>

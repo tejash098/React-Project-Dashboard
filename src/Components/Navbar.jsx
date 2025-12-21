@@ -99,6 +99,15 @@ export default function Navbar() {
           >
             Password-Generator
           </NavLink>
+          <NavLink
+            to="/bookLibrary"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Book-Library
+          </NavLink>
         </div>
       </nav>
     </>
