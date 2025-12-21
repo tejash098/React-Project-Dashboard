@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import SearchIcon from "@mui/icons-material/Search";
 import "./BookLibrary.css";
 import axios from "axios";
 
 const BookLibrary = () => {
   const [ApiData, setApiData] = useState([]);
+  const [search, setSearch] = useState("");
 
   const toggleReadStatus = (id) => {
     setApiData((prev) =>
@@ -32,11 +34,35 @@ const BookLibrary = () => {
     fetchData();
   }, []);
 
+  const hdlSearch = () => {
+    if (search === "") {
+      return;
+    }
+    const filteredData = ApiData.filter((elem) => elem.title.toLowerCase().includes(search));
+    setApiData(filteredData);
+  };
+
   return (
     <>
       <div className="booklibrary">
         <div className="booklibrary-header">
-          <h1><LibraryBooksIcon fontSize="large"/> Book Library</h1>
+          <h1>
+            <LibraryBooksIcon fontSize="large" /> Book Library
+          </h1>
+          <span>
+            <input
+              type="text"
+              placeholder="search books"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyUp={(e) => e.key === "Enter" && hdlSearch()}
+            />
+            <SearchIcon
+              className="search-icon"
+              color="primary"
+              onClick={hdlSearch}
+            />
+          </span>
         </div>
 
         <div className="booklibrary-stats">
