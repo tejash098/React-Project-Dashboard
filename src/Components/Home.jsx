@@ -60,6 +60,12 @@ const Home = () => {
                   Book-Library is a simple application that allows search by author or name and reading books or downloading books in pdf format.
                 </p>
               </div>
+              <div className="project-card">
+                <h3 className="project-card-title">Quiz-App</h3>
+                <p className="project-card-description">
+                  Quiz-App is a simple application that allows you to create a quiz with different options like multiple choice, true or false and single choice.
+                </p>
+              </div>
             </div>
           </div>
         </div>

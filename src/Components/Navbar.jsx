@@ -108,6 +108,15 @@ export default function Navbar() {
           >
             Book-Library
           </NavLink>
+          <NavLink
+            to="/quiz"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Quiz-App
+          </NavLink>
         </div>
       </nav>
     </>

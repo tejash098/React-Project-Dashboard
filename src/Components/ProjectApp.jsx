@@ -12,7 +12,7 @@ import About from "./Portfolio/About";
 import Contact from "./Portfolio/Contact";
 import Landing from "./Portfolio/Landing";
 import BookLibrary from "./Projects/Book-Library/BookLibrary";
-
+import QuizApp from "./Projects/Quiz-App/QuizApp";
 function ProjectApp() {
   return (
     <BrowserRouter>
@@ -30,6 +30,7 @@ function ProjectApp() {
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/bookLibrary" element={<BookLibrary/>}/>
+          <Route path="/quiz" element={<QuizApp/>}/>
         </Routes>
       </div>
     </BrowserRouter>

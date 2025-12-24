@@ -1,0 +1,147 @@
+
+.QuizApp {
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: #111;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.QuizApp h1 {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.Menu h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #eaeaea;
+}
+
+.Menu button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.Menu button:hover {
+  background-color: #6aa8f0;
+  transform: translateY(-1px);
+}
+
+.Quiz {
+  margin-top: 10px;
+}
+
+/* Timer */
+.timer {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: #3a2f00;
+  color: #ffcc80;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  border: 1px solid #4a3b00;
+}
+
+/* Question */
+.Quiz h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.options button {
+  padding: 14px 18px;
+  font-size: 15px;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.options button:hover {
+  background-color: #333;
+}
+
+/* Selected Option */
+.options button.selected {
+  background-color: #1f3b2d;
+  border: 2px solid #4caf50;
+  color: #b7f5c3;
+}
+
+/* Next / Finish Button */
+.next-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.next-btn:hover {
+  background-color: #6aa8f0;
+  transform: translateY(-1px);
+}
+
+
+.EndScreen h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.EndScreen h3 {
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+  color: #cfcfcf;
+}
+
+.EndScreen button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.EndScreen button:hover {
+  background-color: #6aa8f0;
+  transform: translateY(-1px);
+}
+
