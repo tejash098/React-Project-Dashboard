@@ -13,6 +13,7 @@ import Contact from "./Portfolio/Contact";
 import Landing from "./Portfolio/Landing";
 import BookLibrary from "./Projects/Book-Library/BookLibrary";
 import QuizApp from "./Projects/Quiz-App/QuizApp";
+import ExpenseManager from "./Projects/Expense-Manager/ExpenseManager";
 function ProjectApp() {
   return (
     <BrowserRouter>
@@ -31,6 +32,7 @@ function ProjectApp() {
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/bookLibrary" element={<BookLibrary/>}/>
           <Route path="/quiz" element={<QuizApp/>}/>
+          <Route path="/expense" element={<ExpenseManager/>}/>
         </Routes>
       </div>
     </BrowserRouter>

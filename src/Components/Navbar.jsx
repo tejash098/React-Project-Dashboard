@@ -117,6 +117,15 @@ export default function Navbar() {
           >
             Quiz-App
           </NavLink>
+          <NavLink
+            to="/expense"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+            end
+          >
+            Expense-Manager
+          </NavLink>
         </div>
       </nav>
     </>
