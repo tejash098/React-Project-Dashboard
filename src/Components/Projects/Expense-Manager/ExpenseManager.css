@@ -55,34 +55,6 @@
   letter-spacing: 1px;
 }
 
-.total-expense::before {
-  content: "Total Expense";
-}
-.budget::before {
-  content: "Monthly Budget";
-}
-.amt-left::before {
-  content: "Amount Remaining";
-}
-
-.total-expense::after,
-.budget::after,
-.amt-left::after {
-  font-size: 24px;
-  font-weight: 700;
-  color: #4a90e2;
-}
-
-.total-expense::after {
-  content: "$0.00";
-}
-.budget::after {
-  content: "$2,000.00";
-}
-.amt-left::after {
-  content: "$2,000.00";
-}
-
 /* Form Styling */
 .input-form {
   background: #1a1a1a;
@@ -148,6 +120,10 @@
 
 .input-form input[type="submit"]:active {
   transform: scale(0.98);
+}
+
+.input-form input[type="submit"]::placeholder {
+  color: #fff;
 }
 
 /* Table Styling */

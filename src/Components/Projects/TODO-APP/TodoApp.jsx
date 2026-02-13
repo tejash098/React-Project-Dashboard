@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ListAltIcon from '@mui/icons-material/ListAlt';
+import ListAltIcon from "@mui/icons-material/ListAlt";
 import "./TodoApp.css";
 
 const TodoApp = () => {
@@ -18,7 +18,7 @@ const TodoApp = () => {
 
   const hdlCheck = (idx) => {
     const newList = list.map((item, i) =>
-      i === idx ? { ...item, status: !item.status } : item
+      i === idx ? { ...item, status: !item.status } : item,
     );
     setList(newList);
   };
@@ -29,7 +29,9 @@ const TodoApp = () => {
 
   return (
     <div className="todoapp">
-      <h1><ListAltIcon fontSize="large"/> Manage your daily todo list.</h1>
+      <h1>
+        <ListAltIcon fontSize="large" /> Manage your daily todo list.
+      </h1>
 
       <form onSubmit={hdlSubmit}>
         <label htmlFor="todo">Add Todo:</label>
