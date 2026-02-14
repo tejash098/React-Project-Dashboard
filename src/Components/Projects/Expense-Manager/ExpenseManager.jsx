@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./ExpenseManager.css";
-import { Category, Description } from "@mui/icons-material";
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+
 const ExpenseManager = () => {
   const [ExpenseList, setExpenseList] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [editBudget, setEditBudget] = useState(false);
   const [Budget, setBudget] = useState(0);
-  const [AmountLeft, setAmountLeft] = useState(0);
 
   const [ExpenseData, setExpenseData] = useState({
     Title: "",
-    Description: "No Description",
+    Amount: "",
     Category: "",
     Date: "",
   });
@@ -25,19 +25,46 @@ const ExpenseManager = () => {
     setExpenseList([...ExpenseList, newExpenseData]);
   };
 
+  const handleDelete = (idx) => {
+    const removedItem = ExpenseList.filter((item, index) => idx !== index);
+    setExpenseList(removedItem);
+  };
+
+  const total = ExpenseList.reduce((sum, item) => {
+    const amt = Number(item.Amount) || 0;
+    return sum + amt;
+  }, 0);
+
   return (
     <>
       <div className="expense-manager">
-        <h1>Expense Manager</h1>
+        <h1><AccountBalanceWalletIcon fontSize="large" color="primary"/> Expense Manager</h1>
         <div className="price-card">
           <div className="total-expense">
             <p>Total Expense</p>
+            <h2>₹ {total}</h2>
           </div>
           <div className="budget">
             <p>Budget</p>
+            {!editBudget ? (
+              <>
+                <h2>₹ {Budget}</h2>
+                <button onClick={()=>setEditBudget(true)}>Edit</button>
+              </>
+            ) : (
+              <>
+                <input
+                  type="number"
+                  value={Budget}
+                  onChange={(e) => setBudget(e.target.value)}
+                />
+                <button onClick={()=>setEditBudget(false)}>OK</button>
+              </>
+            )}
           </div>
           <div className="amt-left">
             <p>Amount Left</p>
+            <h2>₹ {Budget - total}</h2>
           </div>
         </div>
         <div className="grid-box">
@@ -51,14 +78,17 @@ const ExpenseManager = () => {
                 id="title"
                 name="Title"
                 onChange={handleChange}
-                required
+                // required
               />
-              <label htmlFor="Description">Description</label>
+              <label htmlFor="Amount">
+                Amount <span>*</span>{" "}
+              </label>
               <input
                 type="text"
-                name="Description"
-                id="Description"
+                name="Amount"
+                id="Amount"
                 onChange={handleChange}
+                // required
               />
               <label htmlFor="Category">
                 Category <span>*</span>{" "}
@@ -68,7 +98,7 @@ const ExpenseManager = () => {
                 id="Category"
                 onChange={handleChange}
                 defaultValue="1"
-                required
+                // required
               >
                 <option value="1" disabled>
                   Select Category
@@ -90,7 +120,7 @@ const ExpenseManager = () => {
                 name="Date"
                 id="date"
                 onChange={handleChange}
-                required
+                // required
               />
               <input type="submit" value="Add" />
             </form>
@@ -101,7 +131,7 @@ const ExpenseManager = () => {
                 <tr>
                   <td>Sl No:</td>
                   <td>Title</td>
-                  <td>Description</td>
+                  <td>Amount</td>
                   <td>Category</td>
                   <td>Date</td>
                   <td>Action</td>
@@ -110,17 +140,22 @@ const ExpenseManager = () => {
               <tbody>
                 {ExpenseList.length !== 0 &&
                   ExpenseList.map((elem, idx) => {
-                    const { Title, Description, Category, Date } = elem;
+                    const { Title, Amount, Category, Date } = elem;
                     return (
-                      <tr key={Title}>
+                      <tr key={idx}>
                         <td>{idx + 1}</td>
-                        <td>{Title}</td>
-                        <td>{Description}</td>
+                        <td style={{textTransform:"capitalize", fontWeight:"bold"}}>{Title}</td>
+                        <td>₹ {Amount}</td>
                         <td>{Category}</td>
                         <td>{Date}</td>
                         <td className="action-buttons">
                           <button className="view">View</button>
-                          <button className="delete">Delete</button>
+                          <button
+                            className="delete"
+                            onClick={() => handleDelete(idx)}
+                          >
+                            Delete
+                          </button>
                         </td>
                       </tr>
                     );
